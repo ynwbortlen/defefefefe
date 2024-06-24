@@ -1,0 +1,77 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "TRAPPED V2 | Key System", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "Key System"})
+
+
+local Player = game.Players.LocalPlayer
+
+OrionLib:MakeNotification({
+	Name = "Discord (Link For Key)",
+	Content = "discord.gg/SqcY6y6b6Y",
+	Image = "rbxassetid://12117215397",
+	Time = 10
+})
+
+--Values
+_G.Key = "OsDee"
+_G.KeyInput = "string"
+
+
+local function Destroy()
+    game.GetService("CoreGui").OrionLib:Destroy()
+end
+
+local function MainScript()
+    loadstring(game:HttpGet("https://pastebin.com/raw/D10hGQhr"))()
+end
+
+local function CorrectKeyNotif()
+    OrionLib:MakeNotification({
+        Name = "Correct Key!",
+        Content = "Loading Script Please Wait.",
+        Image = "rbxassetid://12117215397",
+        Time = 5
+})
+end
+
+local function IncorrectKeyNotif()
+    OrionLib:MakeNotification({
+        Name = "Incorrect Key!",
+        Content = "Invalid Key Try Again.",
+        Image = "rbxassetid://12117215397",
+        Time = 5
+})
+end
+
+local Tab = Window:MakeTab({
+	Name = "Home",
+	Icon = "rbxassetid://12053823591",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter Key Here",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+        _G.KeyInput = Value
+	end
+})
+
+Tab:AddButton({
+	Name = "Check Key",
+	Callback = function()
+        if _G.KeyInput == _G.Key then
+            MainScript()
+            CorrectKeyNotif()
+            Destroy()
+        else
+            IncorrectKeyNotif()
+        end
+    end
+})
+
+local Section = Tab:AddSection({
+    Name = "Discord (Key Link)"
+})
+
+Section:AddParagraph("Link:","discord.gg/SqcY6y6b6Y")
