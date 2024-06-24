@@ -21,7 +21,7 @@ local function Destroy()
 end
 
 local function MainScript()
-    loadstring(game:HttpGet("https://pastebin.com/raw/D10hGQhr"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/ynwbortlen/TRAPPED-V2/main/TRAPPPED%20V2"))()
 end
 
 local function CorrectKeyNotif()
