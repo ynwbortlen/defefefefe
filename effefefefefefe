@@ -12,7 +12,7 @@ OrionLib:MakeNotification({
 })
 
 --Values
-_G.Key = "OsDee"
+_G.Key = "KEYSOME12"
 _G.KeyInput = "string"
 
 
